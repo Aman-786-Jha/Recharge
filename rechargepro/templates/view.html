@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ol>
+        <li>1st table is for Recommended packs</li>
+        <li>2nd table is for Hero-Unlimited packs</li>
+        <li>3rd table is for Other plans packs</li>
+      </ol>
+
+      <div>
+        <h3>Recommended Packs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Talktime</th>
+              <th>Calls</th>
+              <th>SMS</th>
+              <th>Validity</th>
+              <th>additional benefit</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for responses in response1 %}
+            <tr>
+              <td>{{responses.talktime}}</td>
+              <td>{{responses.calls}}</td>
+              <td>{{responses.SMS}}</td>
+              <td>{{responses.validity}}</td>
+              <td>{{responses.additional_benefit}}</td>
+              <td>{{responses.price}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Hero Unlimted Plans</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Talktime</th>
+              <th>Data</th>
+              
+              <th>Validity</th>
+              <th>additional benefit</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for responses in response3 %}
+            <tr>
+              <td>{{responses.talktime}}</td>
+              <td>{{responses.data}}</td>
+              <td>{{responses.validity}}</td>
+              
+              <td>{{responses.additional_benefit}}</td>
+              <td>{{responses.price}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Other Plans</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Talktime</th>
+              
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for responses in response2 %}
+            <tr>
+              <td>{{responses.talktime}}</td>
+              
+              <td>{{responses.price}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

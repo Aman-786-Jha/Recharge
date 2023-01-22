@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <header class="header">
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+      <a href="#" class="logo"> <span>smart</span>Recharge </a>
+
+      <nav class="navbar">
+        <a href="http://127.0.0.1:8000/index/">home</a>
+        <a href="#vehicles">Mobile</a>
+        <a href="http://127.0.0.1:8000/true5g">True 5G</a>
+        <a href="#featured">AmanFiber</a>
+        
+        <a href="http://127.0.0.1:8000/contactus/">contact</a>
+      </nav>
+
+      <div id="login-btn">
+        <a href="http://127.0.0.1:8000/login/" class="btn">Login</a>
+        <!-- <button class="btn">login</button> -->
+        <i class="far fa-user"></i>
+    </div>
+    </header>
+    <section class="contact" id="contact">
+      <h1 class="heading"><span>contact</span> us</h1>
+
+      <div class="row">
+        <form method="POST" action="contact/">
+          {% csrf_token %} 
+          <h3>get in touch</h3>
+          <input type="text" placeholder="your name" class="box" name="customername"/>
+          <input type="email" placeholder="your email" class="box" name="email"/>
+          <input type="tel" placeholder="subject" class="box" name="sub"/>
+          <textarea
+            placeholder="your message"
+            class="box"
+            cols="30"
+            rows="10"
+            name="textarea"
+          ></textarea>
+          <input type="submit" value="send message" class="btn" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
